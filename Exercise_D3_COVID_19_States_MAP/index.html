@@ -96,8 +96,8 @@
                 .style("left",(mouseData.clientX+10).toString()+"px")
                 .style("top",(mouseData.clientY+10).toString()+"px")
                 .html(
-                    "<div class='tooltipData' style='color:blue'>Cases: "+covid_data.get(d.properties.NAME)[0].cases.toString()+"</div>" +
-                    "<div class='tooltipData' style='color:red'>Deaths: "+covid_data.get(d.properties.NAME)[0].deaths.toString()+"</div>" +
+                    "<div class='tooltipData' style='color:blue'>Cases: "+covid_data.get(d.properties.STUSPS)[0].cases.toString()+"</div>" +
+                    "<div class='tooltipData' style='color:red'>Deaths: "+covid_data.get(d.properties.STUSPS)[0].deaths.toString()+"</div>" +
                     "<div class='tooltipData'></div>")
         })
         .transition()
@@ -105,7 +105,7 @@
         .duration(800)
         .style("fill",function (d){
             try{
-                return colorScale(parseInt(covid_data.get(d.properties.NAME)[0].cases));
+                return colorScale(parseInt(covid_data.get(d.properties.STUSPS)[0].cases));
             }
             catch (error)
             {
